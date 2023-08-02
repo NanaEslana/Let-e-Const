@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variaveis</title>
+</head>
+<body>
+    <script>
+        //const ultilizamos quando não queremos mudar o valor
+
+        /* const idade = "01-03-1999";
+           idade = "03-04-1998" 
+            Não conseguir fazer alteração.
+        */ 
+
+        const pessoas = {nome: 'Joãozinho'}
+        pessoas.idade = '34';//adicionamos uma propriedade.
+
+        console.log(pessoas);
+
+        //Let é uma subtituição do var,ela não pode declarar a mesma variavel no escopo.
+
+
+        let resultado = 3;
+        resultado = 4 + 3;
+        console.log(resultado);
+
+        //Hoisting,conseguimos declara um função antes mesmo de declara uma variavel.
+
+        //Exemplo de Hoisting,ele pegar a função em baixo e jogar para cima.
+        nome  = 'Eslana';
+        imprimirNome(nome);
+
+        function imprimirNome(nome){
+             console.log('nome', nome);
+        }
+
+        var nome;
+
+        //Dead Zone (tdZ),variavel so e acessivel quando a função chegar nela.
+
+        let valor = 0;
+        if(true){
+
+        }
+        console.log(valor);
+    </script>
+    <script>
+            //Template String torna tudo mais faceis
+
+        let nome = 'Eslana';
+        console.log(`Bem- vindo ${nome}`);
+
+
+        //Exibindo uma palavra com quebra de linha.
+        console.log(`
+        Exibindo
+        uma 
+        palavra
+        por
+        linha
+        `)
+
+        //Mercadinho JavaScript
+
+        var nome = 'nome';
+        var idade = 34;
+        var endereco = 'Rua dos Pães';
+
+        const div = 
+        `<div>
+            <p><b>Nome: </b> ${nome} </p>;
+            <p><b>Idade: </b> ${idade} </p>;
+            <p><b>Endereço: </b> ${endereco} </p>;
+        </div>`;
+
+        console.log(div);
+
+        //Template String Marcadores.
+        //Conseguimos ultilizar uma marcação,consigo modificar a saida dele
+        //string sera todas as string marcada ,com essa variavel conseguimos pega cada um dos indices
+        //valores sera todos os valores processados
+
+        const nome = 'Eslana';
+        const ano = 34;
+
+        function marcacao(string, ...valores){
+            console.log(string[0]);
+            console.log(valores[0]);
+            console.log(string[1]);
+            console.log(valores[1]);
+            console.log(string[2]);
+
+             return 'Oi';
+        }
+
+        let mensagem = marcacao `Meu nome é ${nome} e eu tenho ${ano} anos.`;
+        console.log(mensagem);
+
+
+
+    </script>
+</body>
+</html>
